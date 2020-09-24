@@ -1,0 +1,107 @@
+<view class="page">
+	<!-- 筛选 -->
+	<view class="header">
+		<view class="header-top">
+			<view class="cur-date" bindtap="getDatePop" data-time="1">{{startTimes}}</view>
+			<view class="link-line"></view>
+			<view class="cur-date" bindtap="getDatePop" data-time="2">{{endTimes}}</view>
+			<view class="fliter" bindtap="filterDate">筛选</view>
+		</view>
+	</view>
+	<!-- tab -->
+	<view class="tabs">
+		<!-- <view class="tabs-item {{item==1?'active':''}}" data-item="1" bindtap="getItem">全部</view> -->
+		<view class="tabs-item {{item==2?'active':''}}" data-item="2" bindtap="getItem">
+			<van-dropdown-menu active-color="#FFE1CC" >
+				<van-dropdown-item id="item" title="{{dropTitle}}" title-class="drop-title" bind:close="closeTabItem">
+					<view wx:for="{{voucherNumList}}" wx:key="index" class="dropItem {{voucherIndex==index?'dropItemAc':''}}" data-item="{{item}}" data-index="{{index}}" bindtap="chooseItem">
+						<view>{{item.promotionName==null?item.productName:item.promotionName}}</view>
+						<view wx:if="{{item.voucherCount!=null}}" class="num">{{item.voucherCount}}</view>
+					</view>
+				</van-dropdown-item>
+			</van-dropdown-menu>
+		</view>
+		<view class="tabs-item {{item==3?'active':''}}" data-item="3" bindtap="getItem">收款</view>
+	</view>
+	<!-- 券码 -->
+
+	<view class="all-or">
+		<block wx:if="{{item==3}}">
+			<view class="pay-card-box" wx:for="{{payList}}" wx:key="index">
+				<view class="card-main">
+					<image src="../../static/images/default_pic_order.jpg" class="shops-img"></image>
+					<view class="desc-box">
+						<view class="order-num">订单号：{{item.orderNo}}</view>
+						<view class="order-time">
+							<image src="../../static/images/listpage_icon_phone.png" class="time-logo"></image>
+							<view class="times">手机号码：{{item.mobileNo}}</view>
+						</view>
+						<view class="order-time">
+							<image src="../../static/images/listpage_icon_time.png" class="time-logo"></image>
+							<view class="times">支付时间：{{item.payDate}}</view>
+						</view>
+						<view class="pay-num-box">
+							<view class="sho-mon">消费：¥{{item.orderAmt}}</view>
+							<view class="real-mon">实付：¥{{item.payCashAmt}}</view>
+						</view>
+					</view>
+				</view>
+				<!-- 券码展开 -->
+				<van-collapse value="{{ activeNames }}" data-index="{{index}}" bind:change="onChange">
+					<van-collapse-item name="{{index}}" is-link="{{false}}">
+						<view class="lps-title-box" slot="title">
+							<view>使用的优惠券/抵用券({{item.merchantProductVoucherList.length}})</view>
+							<image src="{{!item.collapse?'../../static/images/arrow-right.png':'../../static/images/arrow-down.png'}}" class="img-arrow"></image>
+						</view>
+						<view class="pro-desc-box">
+							<view class="non-box non-box-bot" wx:for="{{item.merchantProductVoucherList}}" wx:for-item="voucher" wx:for-index="k" wx:key="k">
+								<view class="voucher-i">
+									<view class="voucher-mon" wx:if="{{voucher.rechargeAmt!=null&&voucher.rechargeAmt!=0}}">￥<text class="voucher-mo-d">{{voucher.rechargeAmt}}</text></view>
+									<view class="{{(voucher.rechargeAmt==null||voucher.rechargeAmt==0)?'no-mo':''}}">代金券</view>
+								</view>
+								<view class="non-con">
+									<view class="order-num">{{voucher.promotionName==null?voucher.productName:voucher.promotionName}}</view>
+									<view class="order-time">
+										<image src="../../static/images/listpage_icon_ticketno.png" class="time-logo"></image>
+										<view  class="voucher-no">券码号：{{voucher.voucherNo}}</view>
+									</view>
+								</view>
+							</view>
+						</view>
+					</van-collapse-item>
+				</van-collapse>
+			</view>
+		</block>
+
+		<!-- 未付款 -->
+		<block wx:if="{{item==2}}">
+			<view class="no-pay" wx:for="{{qList}}" wx:key="index">
+				<view class="non-box non-box-bot">
+					<view class="voucher-i">
+						<view class="voucher-mon" wx:if="{{item.rechargeAmt!=null&&item.rechargeAmt!=0}}">￥<text class="voucher-mo-d">{{item.rechargeAmt}}</text></view>
+						<view class="{{(item.rechargeAmt==null||item.rechargeAmt==0)?'no-mo':''}}">代金券</view>
+					</view>
+					<view class="non-con">
+						<view class="order-num">{{item.promotionName==null?item.productName:item.promotionName}}</view>
+						<view class="order-time">
+							<image src="../../static/images/listpage_icon_ticketno.png" class="time-logo"></image>
+							<view class="voucher-no">券码号：{{item.voucherNo}}</view>
+						</view>
+							<view class="order-time">
+							<image src="../../static/images/orderNO.png" class="time-logo"></image>
+							<view class="voucher-no">订单号：{{item.orderNo}}</view>
+						</view>
+						<view class="order-time">
+							<image src="../../static/images/listpage_icon_time.png" class="time-logo"></image>
+							<view>使用时间：{{item.useTime}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+
+	<van-popup show="{{ dateShow }}" round position="bottom" bind:close="closeDate">
+		<van-datetime-picker type="date" value="{{ currentDate }}" bind:cancel="cancelDate" bind:confirm="confirmDate" />
+	</van-popup>
+</view>

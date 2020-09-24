@@ -1,0 +1,56 @@
+<!--pages/result/result.wxml-->
+<view class="page">
+	<view class="bg-co">核验成功</view>
+	<view class="item-box item-bot-ma">
+		<view class="title">订单金额</view>
+		<view class="money">¥{{checkVoucherInfo.orderAmount}}</view>
+	</view>
+	<van-collapse value="{{ activeNames }}" bind:change="onChange">
+		<van-collapse-item name="1" is-link="{{false}}">
+			<view class="item-box" slot="title">
+				<view class="title">使用的优惠券/抵用券({{totalNum}})</view>
+				<image wx:if="{{!clopse}}" src="../../static/images/arrow-down.png" class="img-arrow"></image>
+				<image wx:else src="../../static/images/arrow-right.png" class="img-arrow"></image>
+				<view class="money">-¥{{checkVoucherInfo.totalAmount}}</view>
+			</view>
+			<view class="list-sin-box" wx:for="{{checkVoucherInfo.checkVoucherList}}" wx:key="index">
+				<view class="voucher-i">
+					<view class="voucher-mon" wx:if="{{item.merchantProductVoucher[0].rechargeAmt!=null&&item.merchantProductVoucher[0].rechargeAmt!=0}}">￥<text class="voucher-mo-d">{{item.merchantProductVoucher[0].rechargeAmt}}</text></view>
+					<view class="{{(item.merchantProductVoucher[0].rechargeAmt==null||item.merchantProductVoucher[0].rechargeAmt==0)?'no-mo':''}}">代金券</view>
+				</view>
+				<view class="q-content">
+					<view class="num-title">
+					  {{item.merchantProductVoucher[0].promotionName==null?item.merchantProductVoucher[0].productName:item.merchantProductVoucher[0].promotionName}}
+					</view>
+					<view class="date-box">
+						<image src="../../static/images/listpage_icon_time.png" class="logo-img"></image>
+						<view>有效期至：{{item.merchantProductVoucher[0].endDate}}</view>
+					</view>
+				</view>
+				<view class="num">✕ {{item.count}}</view>
+			</view>
+		</van-collapse-item>
+	</van-collapse>
+	<view class="item-box item-top-ma ma-bot">
+		<view class="title">实收金额</view>
+		<view class="money">¥{{checkVoucherInfo.realAmount}}</view>
+	</view>
+	<!-- 确认按钮 -->
+	<view class="footer-box">
+		<view class="goon {{paymentSwitch=='1'?'':'go-ac'}}" bindtap="againCheck">继续验码</view>
+		<view wx:if="{{paymentSwitch=='1'&&checkVoucherInfo.realAmount!=0}}" class="pay" bindtap="getPay">发起收款(¥{{checkVoucherInfo.realAmount}})</view>
+	</view>
+
+	 <van-popup show="{{ payShow }}" round bind:close="payClose">
+    <view class="pop-login-box">
+      <view class="pop-login-content">
+        <view class="login-title">发起收款</view>
+        <view class="login-content">是否发起收款？</view>
+      </view>
+      <view class="pop-login-bot">
+        <view class="bot-left" bindtap="payClose">取消</view>
+        <view class="bot-sure" bindtap="paySure">确定</view>
+      </view>
+    </view>
+  </van-popup>
+</view>

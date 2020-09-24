@@ -1,0 +1,68 @@
+<view class="page">
+
+  <view class="header">
+    <image src="{{storeInfo.storeLogo}}" class="header-img"></image>
+    <view class="header-content">
+      <view class="content-top">{{storeInfo.storeName}}</view>
+      <view class="content-bot">
+        <view class="bot-le">店员：{{storeInfo.mobileNo}}</view>
+        <view class="bot-right" bindtap="loginout" wx:if="{{isLoginout}}">
+          <image src="../../static/images/homepage_icon_signout_nor.png" class="login-logo"></image>
+          <view>退出登录</view>
+        </view>
+        <view class="bot-right bot-right-ac" bindtap="loginout" wx:else>
+          <image src="../../static/images/homepage_icon_signout_pre.png" class="login-logo"></image>
+          <view>退出登录</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="scan-logo-box">
+    <image src="../../static/images/homepage_btn_scan.png" class="scan-logo" bindtap="scan"></image>
+    <van-field
+      value="{{ code }}"
+      placeholder="请输入券码"
+      border="{{ false }}"
+      class="inp"
+      bind:change="getCodeValue"
+    />
+    <view class="sure {{code!=''?'active':''}}" bindtap="sure">核销</view>
+  </view>
+
+  <!-- 弹框 -->
+  <van-popup show="{{ popShow }}" round bind:close="onClose">
+    <view class="pop-box">
+      <view class="pop-title">核检结果</view>
+      <view class="pop-content">
+        <image src="../../static/images/testDefeat.png" class="pop-img"></image>
+        <view>{{textResult}}</view>
+      </view>
+      <view class="pop-bot" bindtap="onClose">确定</view>
+    </view>
+  </van-popup>
+    <!-- 弹框 -->
+  <van-popup show="{{ susShow }}" round bind:close="onClose">
+    <view class="pop-box">
+      <view class="pop-title">核检结果</view>
+      <view class="pop-content">
+        <image src="../../static/images/vchor-sus.png" class="pop-img"></image>
+        <view>{{textResult}}</view>
+      </view>
+      <view class="pop-bot" bindtap="onClose">确定</view>
+    </view>
+  </van-popup>
+  <!-- 退出登录弹框 -->
+  <van-popup show="{{ loginoutShow }}" round bind:close="loginClose">
+    <view class="pop-login-box">
+      <view class="pop-login-content">
+        <view class="login-title">退出登录</view>
+        <view class="login-content">是否确认退出登录？</view>
+      </view>
+      <view class="pop-login-bot">
+        <view class="bot-left" bindtap="loginClose">取消</view>
+        <view class="bot-sure" bindtap="loginSure">确定</view>
+      </view>
+    </view>
+  </van-popup>
+</view>

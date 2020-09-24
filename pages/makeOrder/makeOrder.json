@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "券码核销",
+  "usingComponents": {
+    "van-field": "../../components/vant/field/index",
+    "van-stepper": "../../components/vant/stepper/index"
+  }
+}

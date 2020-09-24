@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "核销历史",
+  "onReachBottomDistance":50,
+  "usingComponents": {
+    "van-field": "../../components/vant/field/index",
+    "van-collapse": "../../components/vant/collapse/index",
+    "van-collapse-item": "../../components/vant/collapse-item/index",
+    "van-dropdown-menu": "../../components/vant/dropdown-menu/index",
+    "van-dropdown-item": "../../components/vant/dropdown-item/index",
+    "van-datetime-picker": "../../components/vant/datetime-picker/index",
+    "van-popup": "../../components/vant/popup/index"
+  }
+}

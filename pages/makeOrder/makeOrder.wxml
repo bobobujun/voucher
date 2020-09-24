@@ -1,0 +1,63 @@
+<!--pages/makeOrder/makeOrder.wxml-->
+<view class="page">
+  <view class="header-box">
+    <view class="header-tip">输入订单金额</view>
+    <van-field
+      value="{{ orderAmount }}"
+      placeholder="¥"
+      border="{{ false }}"
+      bind:change="changeMoney"
+      class="inp"
+      input-align="right"
+    />
+  </view>
+  <view class="add-q-box">
+    <view class="list-title">客户优惠券列表<text class="checked">(已选{{totalCheckNum}}张|共{{voucherAmount}}张)</text></view>
+    <!-- <view class="add-q" bindtap="againCheck">+添加优惠券</view> -->
+  </view>
+  <!-- 券码列表 -->
+  <view class="list-sin-box" wx:for="{{voucherList}}" wx:key="index">
+    <view class="voucher-i {{item.notUse?'voucher-nt':''}}">
+      <view class="voucher-mon" wx:if="{{item.merchantProductVoucher[0].rechargeAmt!=null&&item.merchantProductVoucher[0].rechargeAmt!=0}}">￥<text class="voucher-mo-d">{{item.merchantProductVoucher[0].rechargeAmt}}</text></view>
+			<view class="{{(item.merchantProductVoucher[0].rechargeAmt==null||item.merchantProductVoucher[0].rechargeAmt==0)?'no-mo':''}}">代金券</view>
+      <view wx:if="{{item.count>1}}" class="voucher-num-i">共{{item.count}}张</view>
+    </view>
+    <view class="q-content">
+      <view class="num-title {{item.notUse?'ban-num-title':''}}">
+        {{item.merchantProductVoucher[0].promotionName==null?item.merchantProductVoucher[0].productName:item.merchantProductVoucher[0].promotionName}}
+      </view>
+      <van-stepper 
+        wx:if="{{item.count>1 && !item.notUse}}" 
+        value="{{item.checkNum}}"
+        data-voucherIndex="{{index}}" data-itemdata="{{item}}"
+        min="1" max="{{item.count}}" integer 
+         bind:change="changeStep" custom-class="stepper" input-width="60rpx" 
+         disable-input
+        button-size="40rpx"
+      />
+      <view class="date-box" wx:if="{{!item.notUse}}">
+         <image src="../../static/images/listpage_icon_time.png" class="logo-img"></image>
+         <view>有效期至：{{item.merchantProductVoucher[0].endDate}}</view>
+      </view>
+      <view class="over-mon" wx:else>消费金额满{{item.merchantProductVoucher[0].rechargeAmt}}使用</view>
+    </view>
+    <image wx:if="{{!item.notUse}}" data-voucherIndex="{{index}}" data-itemdata="{{item}}" bindtap="checkBig"
+     src="{{item.checked?'../../static/images/listpage_btn_chs.png':'../../static/images/listpage_btn_nochs.png'}}"
+      class="checked-img"></image>
+  </view>
+  <!-- 确认客户 -->
+  <view class="aga-che">
+    <image bindtap="checkSmall"
+     src="{{!isSmallChecked?'../../static/images/confirm_btn_nochs.png':'../../static/images/confirm_btn_chs.png'}}"
+      class="aga-img"></image>
+    <view  bindtap="checkSmall">已和客户确认消费金额和已选择的优惠券</view>
+  </view>
+<!-- 底部固定 -->
+  <view class="footer">
+    <view class="footer-left">
+      <div>客户应付</div>
+      <div class="footer-mon {{isSmallChecked?'footer-mom-ac':''}}">¥{{realAmount}}</div>
+    </view>
+    <view class="footer-right {{isSmallChecked?'footer-right-ac':''}}" bindtap="confirm">确认核销</view>
+  </view>
+</view>

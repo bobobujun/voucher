@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "二维码收款",
+  "usingComponents": {
+    "van-popup": "../../components/vant/popup/index"
+  }
+}
