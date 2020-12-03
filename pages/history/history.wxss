@@ -1,0 +1,296 @@
+/* pages/history/history.wxss */
+.page{
+  /* position: fixed; */
+  width: 100%;
+  height: 100%;
+  background:rgba(250,248,245,1);
+}
+.header{
+  padding: 0 32rpx;
+  background:rgba(255,255,255,1);
+  z-index: 100;
+}
+.header-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 0;
+  border-bottom:1px solid rgba(250,248,245,1) ;
+}
+.cur-date{
+  width:240rpx;
+  height:60rpx;
+  background:rgba(250,248,245,1);
+  border-radius:4rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  text-align: center;
+  line-height: 60rpx;
+}
+.van-cell {
+  background:#FAF8F5 !important;
+  padding:2px !important;
+}
+.link-line{
+  width:26rpx;
+  height:2rpx;
+  background:rgba(153,153,153,1);
+}
+.fliter{
+  padding: 8rpx 28rpx;
+  background:rgba(255,151,81,1);
+  font-size:32rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}
+.tabs{
+  display: flex;
+  background:rgba(255,255,255,1);
+}
+.tabs-item{
+  flex: 1;
+  text-align: center;
+  padding: 16rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.active{
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  border-bottom: 4rpx solid rgba(255,151,81,1);
+}
+.van-dropdown-menu{
+  height: 100% !important;
+  height: var(--dropdown-menu-height, 100%) !important;
+}
+.dropItem{
+  margin: 6rpx auto;
+  width:620rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 8rpx 22rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  border-radius:8rpx;
+}
+.dropItemAc{
+  background:rgba(255,225,204,1);
+}
+.drop-title{
+  width: 146rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.van-dropdown-menu__title:after{
+  right: 6px !important;
+}
+.num{
+  color:rgba(255,151,81,1);
+}
+.van-bottom-enter-active,
+.van-bottom-leave-active,
+.van-left-enter-active,
+.van-left-leave-active,
+.van-right-enter-active,
+.van-right-leave-active,
+.van-top-enter-active,
+.van-top-leave-active {
+  padding: 14rpx 20rpx 20rpx;
+}
+.gar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 16rpx;
+}
+.trible{
+  border: 11rpx solid;
+  border-color:#FF9751 transparent transparent  transparent; 
+  margin: 16rpx 0 0 10rpx;
+}
+
+.all-or{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pay-card-box{
+  width: 710rpx;
+  margin-top: 32rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 2rpx 8rpx 0px rgba(224,205,184,0.5);
+  border-radius:16rpx;
+  overflow: hidden;
+}
+.card-main{
+  padding: 32rpx;
+  display: flex;
+  align-items: flex-start;
+  /* border-bottom: 1px solid rgba(250,248,245,1); */
+}
+.shops-img{
+  width:160rpx;
+  height:160rpx;
+  display: block;
+  margin-right: 24rpx;
+}
+.order-num{
+  font-size:32rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(51,51,51,1);
+  margin-bottom: 16rpx;
+}
+.order-time{
+  /* margin-top: 24rpx; */
+  display: flex;
+  font-size:20rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  align-items: center;
+}
+.time-logo{
+  margin-right: 10rpx;
+  width:18rpx;
+  height:18rpx;
+  display: block;
+}
+.pay-num-box{
+  margin-top: 16rpx;
+  display: flex;
+  align-items: center;
+}
+.sho-mon{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  border-right: 1px solid rgba(204,204,204,1);
+  padding-right: 46rpx;
+}
+.real-mon{
+  margin-left: 24rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(255,151,81,1);
+}
+.lps-title-box{
+  background:rgba(255,255,255,1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  padding: 20rpx 32rpx 10rpx 32rpx;
+}
+.non-box{
+  display: flex;
+  /* align-items: center; */
+  padding: 32rpx;
+}
+.non-box-bot{
+  border-bottom: 1px solid rgba(250,248,245,1);
+}
+.non-con{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20rpx 0;
+}
+/* 折叠 */
+.van-collapse-item__content{
+  padding: 0!important;
+  border: none!important;
+}
+.van-cell {
+  background:rgba(255,255,255,1) !important;
+}
+.van-cell:after{
+  border:none!important;
+}
+.pro-desc-box{
+  overflow: hidden;
+  border-radius:16rpx;
+}
+.no-pay{
+  margin-top: 24rpx;
+  width: 710rpx;
+  box-shadow:0px 2rpx 8rpx 0px rgba(224,205,184,0.5);
+  border-radius:16rpx;
+  background:rgba(255,255,255,1);
+}
+.no-pay-title{
+  padding: 22rpx 32rpx 0 32rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+.img-arrow{
+  width:24rpx;
+  height:24rpx;
+  display: block;
+  margin-left: 20rpx;
+}
+.voucher-i{
+  width:160rpx;
+  height:160rpx;
+  margin-right: 24rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 0px 4px 0px rgba(255,151,81,0.33);
+  border-radius:16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,151,81,1);
+  position: relative;
+}
+.voucher-mon{
+  margin-top: 28rpx;
+}
+.voucher-mo-d{
+  font-size: 48rpx;
+}
+.voucher-num-i{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height:40rpx;
+  text-align: center;
+  font-size:20rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  background:rgba(0,0,0,1);
+  border-radius:0px 0px 16rpx 16rpx;
+  opacity:0.4;
+}
+.voucher-nt{
+  opacity: 0.3;
+}
+.no-mo{
+  margin-top: 45rpx;
+  font-size: 38rpx;
+}
+.voucher-no{
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

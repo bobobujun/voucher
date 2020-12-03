@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml-->
+<view class="page" >
+  <view class="title">商户券码核销系统</view>
+	<button class="btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" bindtap="wxlogin">
+		<view>微信授权一键登录</view>
+	</button>
+
+  <view class="account" bindtap="phoneLogin">使用账号密码登陆</view>
+
+	<van-popup show="{{ bankShow }}" round position="bottom" bind:close="closeBank">
+		<van-picker  show-toolbar columns="{{ bankList }}"  title="请选择银行"    bind:cancel="closeBank" bind:confirm="onConfirm" />
+	</van-popup>
+</view>

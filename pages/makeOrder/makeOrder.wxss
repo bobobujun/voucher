@@ -1,0 +1,218 @@
+/* pages/makeOrder/makeOrder.wxss */
+.page{
+  width: 100%;
+  min-height: 100%;
+  background:rgba(250,248,245,1);
+  padding-bottom: 125rpx;
+}
+.header-box{
+  display: flex;
+  background:rgba(255,237,227,1);
+  align-items: center;
+  padding: 28rpx 40rpx;
+  justify-content: space-between;
+}
+.header-tip{
+  font-size:32rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.inp{
+  display: block;
+  width: 200rpx;
+}
+.add-q-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26rpx 32rpx;
+  background:rgba(255,255,255,1);
+}
+.list-title{
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+.checked{
+  color: #FF9751;
+}
+.add-q{
+  padding: 8rpx 20rpx;
+  background: rgba(255,151,81,1);
+  border-radius:32rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}
+.list-sin-box{
+  display: flex;
+  padding: 32rpx;
+  align-items: center;
+  background:rgba(255,255,255,1);
+  border-top: 1px solid rgba(250,248,245,1);
+}
+.voucher-i{
+  width:160rpx;
+  height:160rpx;
+  margin-right: 24rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 0px 4px 0px rgba(255,151,81,0.33);
+  border-radius:16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,151,81,1);
+  position: relative;
+}
+.voucher-mon{
+  margin-top: 28rpx;
+}
+.voucher-mo-d{
+  font-size: 48rpx;
+}
+.voucher-num-i{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height:40rpx;
+  text-align: center;
+  font-size:20rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  background:rgba(0,0,0,1);
+  border-radius:0px 0px 16rpx 16rpx;
+  opacity:0.4;
+}
+.voucher-nt{
+  opacity: 0.3;
+}
+.no-mo{
+  margin-top: 45rpx;
+  font-size: 38rpx;
+}
+.q-content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;   
+  height: 160rpx;
+}
+.num-title{
+  font-size:32rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(51,51,51,1);
+}
+.ban-num-title{
+  color:rgba(153,153,153,1);
+}
+.stepper{
+  display: block;
+}
+.van-stepper__input--disabled{
+  color: #333333 !important;
+  background: #E5E7F3 !important;
+}
+.van-stepper__input{
+  padding: 0 !important;
+  margin: 0 !important;
+  background:rgba(243,244,248,1) !important;
+}
+.van-stepper__minus,.van-stepper__plus {
+  margin: 0 !important;
+  background:rgba(243,244,248,1) !important;
+}
+
+.date-box{
+  display: flex;
+  align-items: center;
+  font-size:20rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.logo-img{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+  display: block;
+}
+.over-mon{
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,151,81,1);
+}
+.checked-img{
+  width: 48rpx;
+  height: 48rpx;
+  display: block;
+}
+.aga-che{
+  /* margin-bottom: 225rpx; */
+  display: flex;
+  padding: 24rpx 32rpx;
+  align-items: center;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+
+}
+.aga-img{
+  width:34rpx;
+  height:34rpx;
+  display: block;
+  margin-right: 12rpx;
+}
+.footer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background:rgba(255,255,255,1);
+  z-index: 100;
+}
+.footer-left{
+  background:rgba(255,255,255,1);
+  flex: 1;
+  padding: 28rpx 32rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  display: flex;
+  align-items: center;
+}
+.footer-mon{
+  margin-left: 16rpx;
+  font-size:36rpx;
+  margin-bottom: -4rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(204,204,204,1);
+}
+.footer-mom-ac{
+  color:rgba(255,151,81,1);
+}
+.footer-right{
+  background:rgba(204,204,204,1);
+  padding: 32rpx 56rpx;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}
+.footer-right-ac{
+  background:rgba(255,151,81,1);
+}

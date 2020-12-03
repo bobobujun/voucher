@@ -1,0 +1,13 @@
+<!--pages/firstWxLogin/firstWxLogin.wxml-->
+
+<view class="page">
+	<view class="desc">我们已经发送了<text class="str">验证码</text>到你的手机：</view>
+	<view class="phone-num">+86 {{phone}}</view>
+	<view class="code-box">
+		<!-- <van-field value="{{valueCode.length>=index+1?valueCode[index]:'' }}" wx:for="{{6}}" wx:key="index" class="inps" maxlength="1" disabled bindtap="getFocus" input-align="center" /> -->
+		<view wx:for="{{6}}" wx:key="index" class="inps" bindtap="getFocus">{{valueCode.length>=index+1?valueCode[index]:'' }}</view>
+	</view>
+		<view class="hide-inp"><van-field  maxlength="6" bind:change="change" focus="{{isFocus}}" /></view>
+	<view class="sug">短信倒计时{{codeDown}}秒<text class="sendcode" wx:if="{{isSendCode}}" bindtap="getCode">没收到?点击发送</text></view>
+	<view class="btn" bindtap="login">登录</view>
+</view>

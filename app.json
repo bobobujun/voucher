@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/history/history",
+    "pages/makeOrder/makeOrder",
+    "pages/code/code",
+    "pages/result/result",
+    "pages/codeResult/codeResult",
+    "pages/phoneLogin/phoneLogin",
+    "pages/firstWxLogin/firstWxLogin"
+  ],
+  "window": {
+    "navigationBarTitleText": "券码核销",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#333333",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "券码核销",
+        "iconPath": "static/images/tabbar/q-un.png",
+        "selectedIconPath": "static/images/tabbar/checked-q.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "核销历史",
+        "iconPath": "static/images/tabbar/unhistory.png",
+        "selectedIconPath": "static/images/tabbar/checked-history.png"
+      }
+    ]
+  }
+}

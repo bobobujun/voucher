@@ -1,0 +1,20 @@
+<!--pages/phoneLogin/phoneLogin.wxml-->
+<view class="page" >
+	<view class="title">商户券码核销系统</view>
+	<van-field value="{{ mobile }}" placeholder="请输入手机号" border="{{ false }}"
+    bind:change="getPhone" class="inp">
+    <image src="../../static/images/landingpage_icon_phone.png" class="img" slot="left-icon"></image>
+  </van-field>
+	<van-field value="{{ password }}" placeholder="请输入密码" border="{{ false }}"
+  bind:change="getPwd" class="inp"  type="password">
+     <image src="../../static/images/landingpage_icon_password.png" class="img" slot="left-icon"></image>
+  </van-field>
+	<van-field placeholder="请输入验证码" border="{{ false }}" class="inp" bind:change="getCode">
+    <image src="../../static/images/landingpage_icon_vcode.png" class="img" slot="left-icon"></image>
+    <van-button slot="button" class="btn {{isclick?'btn-ac':''}}" bindtap="sendCode">{{codeText}}</van-button>
+  </van-field>
+  <view class="tips-vecode" wx:if="{{codeTips}}">{{codeTips}}</view>
+  <view class="login" bindtap="login">登录</view>
+	<!-- <slider-code wx:if="{{showSlide}}" bindcloseSlide="closeSlide" bindcheckSlide="checkSlide" id="slides"></slider-code>	 -->
+
+</view>

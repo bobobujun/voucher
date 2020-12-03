@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-field": "../../components/vant/field/index",
+    "slider-code":"../../components/slider/slider"
+  }
+}

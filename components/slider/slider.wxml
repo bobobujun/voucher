@@ -1,0 +1,20 @@
+<view class="code-k-div">
+	<view class="code_bg" bindtap="closeSlide"></view>
+	<view class="code-con">
+		<view class="code-img">
+			<view class="code-img-con">
+				<view class="code-mask {{isTransition?'transition':''}}" style="left:{{slideLeft}}px">
+         <image class="code-front-img" src="../../static/images/slide/1-w.png"></image>
+        </view>
+				<image class="code-back-img" src="../../static/images/slide/1.jpg"></image>
+			</view>
+			<view class="code-push"><span class="code-tip"></span></view>
+		</view>
+		<view class="code-btn" bindtouchmove="slideMove" id="slideWrap">
+			<view  bindtouchstart="slideStart" bindtouchend="slideEnd"
+			class="code-btn-img code-btn-m {{isClick?'shandowing':'boxshadowend'}} {{isTransition?'transition':''}}"
+			 style="left:{{slideLeft}}px"></view>
+			<text class="code-span">按住滑块，拖动完成上方拼图</text>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,23 @@
+<!--pages/code/code.wxml-->
+<view class="page">
+	<view class="box">
+		<view class="title" bindtap="getQRcodeForUser">点击刷新二维码</view>
+		<image src="{{qrContent}}" class="qr-code" bindtap="getQRcodeForUser"></image>
+		<view class="btn-box">
+			<view class="cancel" bindtap="cancelPay">取消收款</view>
+			<view class="order" bindtap="lookPayOrder">查看支付订单</view>
+		</view>
+	</view>
+	 <van-popup show="{{ popShow }}" round bind:close="close">
+    <view class="pop-login-box">
+      <view class="pop-login-content">
+        <view class="login-title">取消收款</view>
+        <view class="login-content">取消后，此账单不能线上支付!</view>
+      </view>
+      <view class="pop-login-bot">
+        <view class="bot-left" bindtap="close">取消</view>
+        <view class="bot-sure" bindtap="sure">确定</view>
+      </view>
+    </view>
+  </van-popup>
+</view>

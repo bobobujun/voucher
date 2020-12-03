@@ -1,0 +1,132 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": true,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "bundle": false
+  },
+  "compileType": "voucherAllBank",
+  "libVersion": "2.9.1",
+  "appid": "wxede5effbc375c1c3",
+  "projectname": "rongshu-mini",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/history/history",
+          "pathName": "pages/history/history",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/makeOrder/makeOrder",
+          "pathName": "pages/makeOrder/makeOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/code/code",
+          "pathName": "pages/code/code",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/result/result",
+          "pathName": "pages/result/result",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/codeResult/codeResult",
+          "pathName": "pages/codeResult/codeResult",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/phoneLogin/phoneLogin",
+          "pathName": "pages/phoneLogin/phoneLogin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/firstWxLogin/firstWxLogin",
+          "pathName": "pages/firstWxLogin/firstWxLogin",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
