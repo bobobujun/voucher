@@ -3,7 +3,6 @@ import {getStoreIndexDetail,getVoucherName} from '../../services/api/vecher'
 import {queryAllVoucher} from '../../services/api/makeOrder'
 import {loginOut} from '../../services/api/login'
 import Dialog from '../../components/vant/dialog/dialog';
-console.log(11)
 Page({
   data: {
     storeInfo:'',//店铺信息
